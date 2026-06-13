@@ -90,21 +90,28 @@ def teacher_dashboard():
         if subjects:
             for sub in subjects:
                 stats = [
-                        ("🫂", "Students", sub["total_students"]),
-                        ("🕰️", "Classes", sub["total_classes"]),
-                    ]
-            def share_btn():
-                if st.button(f"Share code: {sub["subject_name"]}", key = f"share_{sub["subject_code"]}", icon = ":material/share:"):
-                    subject_share_dialog(sub["subject_name"], sub["subject_code"])
-                st.space()
+                    ("🫂", "Students", sub["total_students"]),
+                    ("🕰️", "Classes", sub["total_classes"]),
+                ]
 
-            subject_card(
-                name = sub["subject_name"],
-                code = sub["subject_code"],
-                section = sub["subject_section"],
-                stats = stats,
-                footer_callback = share_btn
-            )
+                def share_btn(subject):
+                    def callback():
+                        if st.button(
+                            f"Share code: {subject['subject_name']}",
+                            key=f"share_{subject['subject_code']}",
+                            icon=":material/share:"
+                        ):
+                            subject_share_dialog(subject["subject_name"], subject["subject_code"])
+                        st.space()
+                    return callback
+
+                subject_card(
+                    name=sub["subject_name"],
+                    code=sub["subject_code"],
+                    section=sub["subject_section"],
+                    stats=stats,
+                    footer_callback=share_btn(sub)
+                )
         else:
             st.info("NO SUBJECTS FOUND. CREATE ONE ABOVE")  
 
