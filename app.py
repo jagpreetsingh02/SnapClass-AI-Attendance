@@ -10,7 +10,7 @@ def main():
         st.session_state["login_type"] = None
 
  #   st.write("Current login_type:", st.session_state["login_type"])
-
+    #st.header("jagpreet")
     match st.session_state["login_type"]:
         case "teacher":
             teacher_screen()

@@ -25,3 +25,4 @@ def footer_dashboard():
                 </div>
                 """, unsafe_allow_html=True)
 
+    #st.write("HEADER UPDATED")
