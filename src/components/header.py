@@ -27,7 +27,7 @@ def header_dashboard():
                 justify-content : center;
                 gap : 10px;">
             <img src = "{img_url}" style = "height:85px;" />
-            <h2 style =  "text-align : left; color: #5865F2">SNAP<br/>CLASS</h1>
+            <h2 style =  "text-align : left; color: #5865F2 ">SNAP<br/>CLASS</h1>
         </div>
                 """, unsafe_allow_html=True)
     

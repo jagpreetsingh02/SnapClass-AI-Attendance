@@ -53,11 +53,12 @@ def style_base_layout():
                 font-size: 2rem !important;
                 line-height: 0.9n !important;
                 margin-bottom: 0rem !important;
-                color: black !important;
+                color: black ;
                 }
 
             h3, h4, p {
                 font-family: "Outfit", sans-serif !important;
+                font-color: black !important
                 }
             
             button{
