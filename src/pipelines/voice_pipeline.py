@@ -48,16 +48,16 @@ def process_bulk_audio(audio_bytes, candidate_dict, threshold = 0.65):
         identified_results = {}
 
         for start, end in segments:
-            if (start-end) < sr * 0.5:
+            if (end - start) < sr * 0.5:
                 continue
-            segment_audio = audio[start : end]
+            segment_audio = audio[start:end]
             wav = preprocess_wav(segment_audio)
             embedding = encoder.embed_utterance(wav)
 
             sid, score = identify_speaker(embedding, candidate_dict, threshold)
 
             if sid:
-                if sid not in identify_speaker or sid > identified_results[sid]:
+                if sid not in identified_results or score > identified_results[sid]:
                     identified_results[sid] = score
 
         return identified_results
