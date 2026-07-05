@@ -9,7 +9,7 @@ def footer_home():
                 items-align: center;
                 justify-content : center;
                 margin-top : 2rem;"
-        <p style = "font-weight: bold;"> Created with ❤️ by JS</p>
+        <p style = "font-weight: bold; color: !important"> Created with ❤️ by JS</p>
                 </div>
                 """, unsafe_allow_html=True)
 def footer_dashboard():
@@ -21,8 +21,7 @@ def footer_dashboard():
                 items-align: center;
                 justify-content : center;
                 margin-top : 2rem;"
-        <p style = "font-weight:  bold; color:black"> Created with ❤️ by JS</p>
+        <p style = "font-weight:  bold; color: !important"> Created with ❤️ by JS</p>
                 </div>
                 """, unsafe_allow_html=True)
 
-    #st.write("HEADER UPDATED")
